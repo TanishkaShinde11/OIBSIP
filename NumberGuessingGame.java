@@ -17,40 +17,38 @@ public class NumberGuessingGame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Initialize components
+      
         randomNumber = generateRandomNumber();
         guessField = new JTextField(10);
         resultLabel = new JLabel("Guess a number between 0 and 100");
-        attemptsLeft = 5; // Set the number of attempts
-
-        // Set up fonts
+        attemptsLeft = 5; 
+      
         Font bigFont = new Font("Arial", Font.BOLD, 20);
         guessField.setFont(bigFont);
         resultLabel.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        // Set up the layout
+       
         setLayout(new BorderLayout());
 
-        // Create panels for better organization
+     
         JPanel inputPanel = new JPanel();
         JPanel resultPanel = new JPanel();
 
-        // Set layouts for the panels
+       
         inputPanel.setLayout(new FlowLayout());
         resultPanel.setLayout(new FlowLayout());
 
-        // Add components to the input panel
+      
         inputPanel.add(new JLabel("Your Guess: "));
         inputPanel.add(guessField);
 
-        // Add components to the result panel
+        
         resultPanel.add(resultLabel);
 
-        // Add panels to the frame
-        add(inputPanel, BorderLayout.NORTH);
+  add(inputPanel, BorderLayout.NORTH);
         add(resultPanel, BorderLayout.CENTER);
 
-        // Add action listener to the text field
+        
         guessField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -84,7 +82,7 @@ public class NumberGuessingGame extends JFrame {
         } catch (NumberFormatException ex) {
             resultLabel.setText("<html><font color='red'>Invalid input. Please enter a number.</font></html>");
         } finally {
-            guessField.setText(""); // Clear the text field after each guess
+            guessField.setText(""); 
         }
     }
 
